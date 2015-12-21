@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require underscore
+//= require backbone
+//= require todo.js
+//= require_tree ./models
+//= require_tree ./collections
+
