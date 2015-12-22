@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.serializejson
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore
@@ -18,4 +19,7 @@
 //= require todo.js
 //= require_tree ./models
 //= require_tree ./collections
+//= require_tree ../templates
+//= require_tree ./views
+//= require_tree ./routers
 
