@@ -6,7 +6,7 @@
   <% todos.each(function (todo) { %>
     <li>
       <a href="#/todos/<%= todo.get("id") %>">
-        <%= todo.get("title") %>
+        <%= todo.escape("title") %>
       </a>
     </li>
   <% })%>

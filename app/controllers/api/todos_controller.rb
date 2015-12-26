@@ -1,5 +1,3 @@
-require "pry"
-
 module Api
   class TodosController < ApplicationController
     def index
@@ -9,7 +7,8 @@ module Api
 
     def show
       @todo = Todo.find(params[:id])
-      render :json => @todo
+      @comments = @todo.comments
+      render "todos/show"
     end
 
     def destroy
@@ -24,7 +23,7 @@ module Api
     def update
       @todo = Todo.find(params[:id])
       if @todo.update_attributes(todo_params)
-        render :json => @todo
+        render "todos/show"
       else
         render :json => @todo.errors, :status => :unprocessable_entity
       end
@@ -34,7 +33,7 @@ module Api
       @todo = Todo.new(todo_params)
 
       if @todo.save
-        render :json => @todo
+        render "todos/show"
       else
         render :json => @todo.errors, :status => :unprocessable_entity
       end
