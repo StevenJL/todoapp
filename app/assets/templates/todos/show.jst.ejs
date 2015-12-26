@@ -1,7 +1,7 @@
 <h3><%= todo.get("title") %></h3>
 <ul>
   <% todo.comments().each(function (comment) { %>
-    <li><%= comment.escape("content") %></li>
+    <li><%= marked(comment.escape("content")) %></li>
   <% }) %>
 </ul>
 
